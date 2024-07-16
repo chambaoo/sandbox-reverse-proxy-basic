@@ -1,0 +1,11 @@
+FROM node:18
+
+WORKDIR /opt/server
+
+COPY package*.json ./
+RUN npm install
+
+COPY ./server_1.js .
+
+EXPOSE 7001
+CMD ["node", "server_1.js"]
